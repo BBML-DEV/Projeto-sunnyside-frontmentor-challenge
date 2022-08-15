@@ -1,0 +1,59 @@
+@use '../1-base/_variables'
+
+//centralizar conteúdos
+@mixin content-center
+    max-width: variables.$container-width
+    margin: 0 auto
+  
+    
+//button
+@mixin button
+    padding: 10px 15px
+    color: #000
+    background-color: variables.$white-color
+    border-radius: 20px
+    font-weight: bold
+    text-transform: uppercase
+    cursor: pointer
+    outline: none
+    transition: .4s
+
+
+//layout link
+@mixin link-format
+a
+    text-decoration: none
+    color: variables.$very-dark-desaturated-blue
+    text-transform: uppercase
+    font-weight: 800
+    padding: .5rem
+    position: relative
+    cursor: pointer
+    font-family: 'Fraunces', serif
+
+a::before
+    content: ""
+    position: absolute
+    bottom: .3rem
+    left: 0
+    width: 100%
+    height: .7rem
+    background: variables.$yellow-color
+    z-index: -1
+     border-radius: .5rem
+     transition: .35s
+
+//format graphic and photography
+@mixin format-jobs
+
+    .left-col-text
+        margin-top: 50%
+        h3
+            font-size: 2rem
+            margin-bottom: 1.5rem
+            text-align: center
+
+        p
+            text-align: center
+
+    

@@ -1,0 +1,131 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layout-mixins'
+
+.features
+    display: flex
+    min-height: 100vh
+    flex-wrap: wrap
+    @include base-mixins.mobile
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    article
+        flex-basis: 100%
+        height: 85vh
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        @include base-mixins.mobile
+            flex-basis: 100%
+            height: 110vh
+     
+    
+
+        .right-col
+            flex-basis: 50%
+            overflow: hidden
+            height: 100%
+            @include base-mixins.mobile
+                flex-basis: 100%
+                overflow: hidden
+                height: 50%
+                order: 1
+
+            img
+                width: 100%
+                height: 100%
+                @include base-mixins.mobile
+                    width: 100%
+                    height: 100%
+
+            
+
+        .left-col
+            flex-basis: 50%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            @include base-mixins.mobile
+                flex-basis: 100%
+                height: 60vh
+                order: 2
+                margin-top: -5px
+                background: variables.$off-white-color
+
+            &-text
+                max-width: 70%
+                @include base-mixins.mobile
+                    max-width: 85%
+                    text-align: center
+
+                h2
+                    font-size: 2.9rem
+                    margin-bottom: 1.5rem
+                    line-height: 1
+                    color: variables.$very-dark-desaturated-blue
+                    @include base-mixins.mobile
+                        font-size: 1.6rem
+                        margin-bottom: 1rem
+
+                p
+                    line-height: 1.4
+                    margin-bottom: 2rem
+                    color: variables.$very-dark-desaturated-blue
+                    font-family: 'Barlow', sans-serif
+                    @include base-mixins.mobile
+                        font-size: .8rem
+
+                a
+                    @include layout-mixins.link-format
+                    @include base-mixins.mobile
+                        position: relative
+                        font-size: .8rem
+                        z-index: 2
+
+        .design
+            background-image: url(../../img/desktop/image-graphic-design.jpg)
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            @include layout-mixins.format-jobs
+
+            h3
+                color: variables.$graphic-text-color
+
+            p
+                color: variables.$graphic-text-color
+                font-weight: bold
+                font-size: 1.1rem
+                @include base-mixins.mobile
+                    font-size: .8rem
+
+
+
+
+        .photo
+            background-image: url(../../img/desktop/image-photography.jpg)
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            @include layout-mixins.format-jobs
+
+            h3
+                color: variables.$photografy-text-color
+               
+
+            p
+                color: variables.$photografy-text-color
+                font-weight: bold
+                font-size: 1.1rem
+                @include base-mixins.mobile
+                    font-size: .8rem
+
+
+
+
+
+

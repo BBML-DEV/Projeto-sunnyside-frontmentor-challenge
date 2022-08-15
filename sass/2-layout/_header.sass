@@ -1,0 +1,136 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layout-mixins'
+
+
+
+.header
+    background-image: url(../../img/desktop/image-header.jpg)
+    background-size: cover
+    background-position: center
+    padding: 1.5rem 0 
+    height: 100vh
+    @include base-mixins.mobile
+        padding: 1.5rem 1.1rem
+        background-image: url(../../img/mobile/image-header.jpg)
+        background-position: center
+        background-size: cover
+        
+
+    &-container
+        @include layout-mixins.content-center
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+
+
+        .nav-container-navbar
+            display: flex
+            align-items: center
+    
+
+            
+            li
+                margin-left: 1rem
+                @include base-mixins.mobile
+                    display: none
+                
+                a
+                    color: variables.$white-color
+                    font-size: .9rem
+
+                .btn
+                    @include layout-mixins.button
+        
+        i
+            color: variables.$white-color
+            font-size: 1.5rem
+            display: none
+            @include base-mixins.mobile
+                display: block
+    
+
+    .banner
+        @include layout-mixins.content-center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    
+    
+        &-title
+            color: variables.$white-color
+            letter-spacing: .5rem
+            margin-top: 100px
+            font-size: 1.8rem
+            text-transform: uppercase
+
+            p
+                text-align: center
+
+                i
+                    font-size: 3rem
+    
+            @include base-mixins.mobile
+                font-size: 1rem
+                text-align: center
+    
+//menu mobile
+.mobile-nav
+    display: none
+    @include base-mixins.mobile
+        display: block
+        position: fixed
+        left: 50%
+        top: 5rem
+        transform: translateX(-50%)
+        background:  variables.$off-white-color
+        text-align: center
+        padding: 2rem
+        z-index: 10
+        width: 90%
+
+        &::after
+            content: ""
+            position: absolute
+            right: 0
+            top: -1.2rem
+            border-top: .6rem solid transparent
+            border-bottom: .6rem solid variables.$off-white-color
+            border-left: .6rem solid transparent
+            border-right: .6rem solid  variables.$off-white-color
+
+            li
+                display: block
+                list-style: none
+                margin-bottom: 2rem
+
+                a
+                    text-decoration: none
+                    color: variables.$photografy-text-color
+                    font-family: 'Barlow', sans-serif
+
+                &::nth-child(4)
+                    margin-bottom: 0
+
+                    a
+                        padding: .8rem 1rem
+                        text-transform: uppercase
+                        background: variables.$yellow-color
+                        border-radius: 3rem
+                        font-size: .8rem
+                        font-weight: 700
+                    
+
+      
+
+   
+
+     
+                 
+
+
+
+
+     
